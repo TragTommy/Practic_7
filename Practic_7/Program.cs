@@ -4,16 +4,22 @@
 Console.WriteLine("Напишите число меньше 100");
 double c;
 int x = 0;
-
-do
+try
 {
-    c = Convert.ToDouble(Console.ReadLine());
-    x++;
-    if (c==77)
+    do
     {
-        Console.WriteLine($"ВНИМАНИЕ НАЙДЕНО ЧИСЛО 77, НЕ УЧЕБНАЯ ТРЕВОГА!!!!!!!!!!!!!! \nОНО ПОД НОМЕРОМ {x}");
-        break;
+
+        c = Convert.ToDouble(Console.ReadLine());
+        x++;
+        if (c == 77)
+        {
+            Console.WriteLine($"ВНИМАНИЕ НАЙДЕНО ЧИСЛО 77, НЕ УЧЕБНАЯ ТРЕВОГА!!!!!!!!!!!!!! \nОНО ПОД НОМЕРОМ {x}");
+            break;
+        }
     }
+    while (c < 100);
 }
-while (c < 100); 
-    
+catch
+{
+    Console.WriteLine("Ну и че ты сделал '_'");
+}    
